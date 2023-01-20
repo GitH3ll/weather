@@ -57,6 +57,7 @@ func (s Service) getTemp(city string, wg *sync.WaitGroup) {
 	}
 
 	fmt.Printf("City: %s, Temp: %f\n", city, kelvinToCelsius(data.Main.Temp))
+	wg.Done()
 }
 
 func kelvinToCelsius(temp float64) float64 {
